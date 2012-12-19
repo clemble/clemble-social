@@ -1,0 +1,7 @@
+package com.socialone.provider.data.callback;
+
+import "DeliveryConfiguration.proto";
+
+message CallbackConfiguration {
+	repeated DeliveryConfiguration deliveryConfigurations = 1;
+}

@@ -1,0 +1,11 @@
+package com.socialone.provider.data.merge;
+
+message MergeConfiguration {
+	repeated ProviderPriority providerPriority = 1;
+
+}
+
+message ProviderPriority {
+	required string providerId = 1;
+	required int32 priority = 2;
+}

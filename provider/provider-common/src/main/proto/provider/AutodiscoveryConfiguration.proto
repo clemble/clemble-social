@@ -1,0 +1,5 @@
+package com.socialone.provider.data.autodiscovery;
+
+message AutodiscoveryConfiguration {
+	required bool multidiscoveryEnabled = 1;
+}

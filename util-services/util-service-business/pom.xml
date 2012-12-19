@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.socialone.utils</groupId>
+        <artifactId>util-services</artifactId>
+        <version>0.0.18-SNAPSHOT</version>
+    </parent>
+    <artifactId>util-service-business</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.socialone.utils</groupId>
+            <artifactId>util-service-translation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.socialone.utils</groupId>
+            <artifactId>util-service-translit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.socialone.utils</groupId>
+            <artifactId>util-service-soundmatch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.socialone.utils</groupId>
+            <artifactId>util-service-synonyms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.socialone.utils</groupId>
+            <artifactId>util-service-delivery</artifactId>
+        </dependency>
+
+        <dependency>
+            <artifactId>commons-collections</artifactId>
+            <groupId>commons-collections</groupId>
+        </dependency>
+    </dependencies>
+
+</project>

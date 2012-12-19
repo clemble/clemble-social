@@ -1,0 +1,9 @@
+package com.socialone.provider.data.signin;
+
+message SignInConfiguration {
+
+    required string signInURL = 1;
+    required string signUpURL = 2;
+    required string postSignInURL = 3;
+
+}

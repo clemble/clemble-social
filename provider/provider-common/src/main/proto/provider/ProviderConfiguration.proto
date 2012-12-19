@@ -1,0 +1,17 @@
+package com.socialone.provider.data.provider;
+
+import "AutodiscoveryConfiguration.proto";
+import "MergeConfiguration.proto";
+import "SignInConfiguration.proto";
+import "MergeConfiguration.proto";
+import "CallbackConfiguration.proto";
+
+message ProviderConfiguration {
+
+    required string provider = 1;
+    required AutodiscoveryConfiguration autodiscoveryConfiguration = 2;
+    required SignInConfiguration signInConfiguration = 3;
+    required MergeConfiguration mergeConfiguration = 4;
+    required CallbackConfiguration callbackConfiguration = 5;
+
+}

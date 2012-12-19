@@ -1,0 +1,15 @@
+package com.socialone.provider.data.callback.delivery;
+
+message DeliveryConfiguration {
+	required DeliveryChannel deliveryChannel = 1;
+	required DeliveryFormat deliveryFormat = 2;
+	required string eventType = 3;
+}
+
+enum DeliveryChannel {
+	HTTP = 1;
+}
+
+enum DeliveryFormat {
+	JSON = 1;
+}
