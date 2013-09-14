@@ -41,8 +41,8 @@ public class SocialTierConfigurations {
                 .getProperty("twitter.consumer.secret"))));
         registry.addConnectionFactory(validate(new LinkedInConnectionFactory(environment.getProperty("linkedin.cunsumer.key"), environment
                 .getProperty("linkedin.consumer.secret"))));
-        registry.addConnectionFactory(validate(new VKontakteConnectionFactory(environment.getProperty("vkontakte.cunsumer.key"), environment
-                .getProperty("vkontakte.consumer.secret"))));
+//        registry.addConnectionFactory(validate(new VKontakteConnectionFactory(environment.getProperty("vkontakte.cunsumer.key"), environment
+//                .getProperty("vkontakte.consumer.secret"))));
         registry.addConnectionFactory(validate(new GoogleConnectionFactory(environment.getProperty("google.cunsumer.key"), environment
                 .getProperty("google.consumer.secret"))));
         return registry;

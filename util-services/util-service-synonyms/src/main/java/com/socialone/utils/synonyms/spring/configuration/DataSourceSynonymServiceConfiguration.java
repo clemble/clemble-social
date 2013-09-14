@@ -17,6 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
@@ -80,27 +82,24 @@ public class DataSourceSynonymServiceConfiguration {
 
         @Bean
         @Singleton
-        public DataSource providerDataSource() throws IOException, SQLException, PropertyVetoException {
-            DataSource dataSource = comboPooledDataSource();
+        public DataSource dataSource() throws IOException, SQLException, PropertyVetoException {
+            DataSource dataSource = dataSourceFactory().getDatabase();
             databasePopulator().populate(dataSource.getConnection());
             return dataSource;
         }
-        
-        private ComboPooledDataSource comboPooledDataSource() throws PropertyVetoException{
-            ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
-            comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/socialone");
-            comboPooledDataSource.setUser("socialone");
-            comboPooledDataSource.setPassword("socialone");
-            comboPooledDataSource.setInitialPoolSize(10);
-            comboPooledDataSource.setMaxPoolSize(50);
-            comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
-            return comboPooledDataSource;
+
+        public EmbeddedDatabaseFactory dataSourceFactory() throws IOException {
+            EmbeddedDatabaseFactory factory = new EmbeddedDatabaseFactory();
+            factory.setDatabaseName("gogomaya");
+            factory.setDatabaseType(EmbeddedDatabaseType.H2);
+            factory.setDatabasePopulator(databasePopulator());
+            return factory;
         }
 
         // Populates DB with appropriate Schema
         private DatabasePopulator databasePopulator() throws IOException {
             ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-            populator.addScript(new ClassPathResource("/com/socialone/data/Synonyms.sql"));
+            populator.addScript(new ClassPathResource("/com/socialone/data/Synonyms-h2.sql"));
             return populator;
         }
     }
