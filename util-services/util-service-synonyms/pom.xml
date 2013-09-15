@@ -9,10 +9,6 @@
     <artifactId>util-service-synonyms</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.socialone</groupId>
-            <artifactId>test</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>

@@ -1,24 +1,16 @@
+package com.socialone.service.deduplication;
 
-
-import java.util.Collection;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import javax.inject.Inject;
-
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.junit.Test;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.socialone.data.user.User;
-import com.socialone.data.user.contact.Profile;
-import com.socialone.service.user.UserRepository;
-import com.socialone.utils.soundmatch.AbstractBusinessTierTest;
 
 public class DeduplicationActivityTest extends AbstractBusinessTierTest{
 
     final private String USER_IDENTIFIER = "1";
+
+    @Test
+    public void initialized() {
+        
+    }
+
 /*
     @Inject // Need to do it this way, since real implementation will be covered in proxy
     private UserContactAddedEventListener<ContactMatchResultEvent> matchContactAddedEventListener;

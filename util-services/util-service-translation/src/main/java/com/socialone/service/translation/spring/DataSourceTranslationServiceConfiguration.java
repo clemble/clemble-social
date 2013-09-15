@@ -27,9 +27,6 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
         DataSourceTranslationServiceConfiguration.TestConfigurations.class })
 public class DataSourceTranslationServiceConfiguration {
 
-    @Inject
-    private DataSource dataSource;
-
     @Configuration
     @Profile(value = "translationCloud")
     static class CloudFoundryConfigurations {

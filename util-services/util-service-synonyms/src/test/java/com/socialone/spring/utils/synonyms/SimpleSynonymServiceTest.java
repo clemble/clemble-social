@@ -11,10 +11,10 @@ import javax.inject.Inject;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.RunInParallel;
-import org.springframework.test.context.SpringJUnit4FrequentClassRunner;
 
 import com.socialone.utils.synonyms.SynonymWordDataRepository;
+import com.stresstest.runners.RunInParallel;
+import com.stresstest.runners.spring.SpringJUnit4FrequentClassRunner;
 
 @RunWith(SpringJUnit4FrequentClassRunner.class)
 public class SimpleSynonymServiceTest extends AbstractSynonymsTest {

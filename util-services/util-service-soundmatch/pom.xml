@@ -38,10 +38,5 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.socialone</groupId>
-            <artifactId>test</artifactId>
-        </dependency>
-
     </dependencies>
 </project>

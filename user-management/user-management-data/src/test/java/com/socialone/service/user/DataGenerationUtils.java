@@ -17,41 +17,41 @@ import com.socialone.data.user.User;
 import com.socialone.data.user.User.ImmutableUser;
 import com.socialone.data.user.contact.Profile;
 import com.socialone.data.user.contact.Profile.SimpleProfileBuilder;
-import com.socialone.test.utils.TestRandomUtils;
+import com.stresstest.random.ObjectGenerator;
 
 public class DataGenerationUtils {
 
     public static SocialConnection generateSocialConnection() {
-        ConnectionKey primaryConnectionKey = ConnectionKeyFactory.get(TestRandomUtils.randomName(SocialNetworkType.class), TestRandomUtils.randomString(10));
-        ConnectionKey link = ConnectionKeyFactory.get(TestRandomUtils.randomElement(SocialNetworkType.class).name(), TestRandomUtils.randomString(10));
+        ConnectionKey primaryConnectionKey = ConnectionKeyFactory.get(ObjectGenerator.generate(SocialNetworkType.class).name(), ObjectGenerator.generate(String.class));
+        ConnectionKey link = ConnectionKeyFactory.get(ObjectGenerator.generate(SocialNetworkType.class).name(), ObjectGenerator.generate(String.class));
         return new ImmutableSocialConnection(primaryConnectionKey, ImmutableList.<ConnectionKey> of(link));
     }
 
     public static SocialPersonProfile generateSocialPersonProfile() {
         SocialConnection socialConnection = generateSocialConnection();
-        SocialDate socialDate = new SimpleSocialDateBuilder().setDay(TestRandomUtils.nextInt(Integer.MAX_VALUE))
-                .setMonth(TestRandomUtils.nextInt(Integer.MAX_VALUE)).setYear(TestRandomUtils.nextInt(Integer.MAX_VALUE));
+        SocialDate socialDate = new SimpleSocialDateBuilder().setDay(ObjectGenerator.generate(Integer.class))
+                .setMonth(ObjectGenerator.generate(Integer.class)).setYear(ObjectGenerator.generate(Integer.class));
         return new SocialPersonProfileEntity().setSocialConnection(socialConnection).setPrimaryConnection(socialConnection.getPrimaryConnection())
-                .setFirstName(TestRandomUtils.randomString(10)).setLastName(TestRandomUtils.randomString(10)).setImage(TestRandomUtils.randomString(10))
-                .setUrl(TestRandomUtils.randomString(10)).setBirthDate(socialDate).setGender(TestRandomUtils.randomElement(Gender.class));
+                .setFirstName(ObjectGenerator.generate(String.class)).setLastName(ObjectGenerator.generate(String.class)).setImage(ObjectGenerator.generate(String.class))
+                .setUrl(ObjectGenerator.generate(String.class)).setBirthDate(socialDate).setGender(ObjectGenerator.generate(Gender.class));
     }
 
     public static SocialPersonProfileEntity generateSocialPersonProfileEntity() {
         SocialConnection socialConnection = generateSocialConnection();
         SocialPersonProfileEntity entitySocialPersonProfile = new SocialPersonProfileEntity();
         entitySocialPersonProfile.setSocialConnection(socialConnection);
-        entitySocialPersonProfile.setBirthDate(new SimpleSocialDateBuilder().setDay(TestRandomUtils.nextInt(Integer.MAX_VALUE))
-                .setMonth(TestRandomUtils.nextInt(Integer.MAX_VALUE)).setYear(TestRandomUtils.nextInt(Integer.MAX_VALUE)));
-        entitySocialPersonProfile.setGender(TestRandomUtils.randomElement(Gender.class));
-        entitySocialPersonProfile.setFirstName(TestRandomUtils.randomString(10));
-        entitySocialPersonProfile.setLastName(TestRandomUtils.randomString(10));
-        entitySocialPersonProfile.setImage(TestRandomUtils.randomString(10));
-        entitySocialPersonProfile.setUrl(TestRandomUtils.randomString(10));
+        entitySocialPersonProfile.setBirthDate(new SimpleSocialDateBuilder().setDay(ObjectGenerator.generate(Integer.class))
+                .setMonth(ObjectGenerator.generate(Integer.class)).setYear(ObjectGenerator.generate(Integer.class)));
+        entitySocialPersonProfile.setGender(ObjectGenerator.generate(Gender.class));
+        entitySocialPersonProfile.setFirstName(ObjectGenerator.generate(String.class));
+        entitySocialPersonProfile.setLastName(ObjectGenerator.generate(String.class));
+        entitySocialPersonProfile.setImage(ObjectGenerator.generate(String.class));
+        entitySocialPersonProfile.setUrl(ObjectGenerator.generate(String.class));
         return entitySocialPersonProfile;
     }
 
     public static Profile generateProfile() {
-        return generateProfile(TestRandomUtils.randomString(10));
+        return generateProfile(ObjectGenerator.generate(String.class));
     }
 
     public static Profile generateProfile(String profileId) {
@@ -59,7 +59,7 @@ public class DataGenerationUtils {
     }
 
     public static User generateUser() {
-        String userId = TestRandomUtils.randomString(10);
+        String userId = ObjectGenerator.generate(String.class);
         return new ImmutableUser(userId, generateProfile(userId), Lists.newArrayList(generateProfile()));
     }
 

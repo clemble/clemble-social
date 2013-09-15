@@ -1,3 +1,4 @@
+package com.socialone.service.deduplication;
 
 
 import org.junit.runner.RunWith;
@@ -7,10 +8,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.socialone.utils.spring.configuration.UtilServicesConfiguration;
+import com.socialone.spring.configuration.UserManagementServiceConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = UtilServicesConfiguration.class)
+@ContextConfiguration(classes = UserManagementServiceConfiguration.class)
 @ActiveProfiles(value = "test")
 @Transactional
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)

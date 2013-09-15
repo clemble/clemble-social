@@ -11,8 +11,7 @@ import com.socialone.data.social.SocialPersonProfile;
 import com.socialone.data.user.contact.Profile;
 import com.socialone.data.user.contact.Profile.SimpleProfileBuilder;
 import com.socialone.service.user.DataGenerationUtils;
-import com.socialone.service.user.contact.ProfileRepository;
-import com.socialone.test.utils.TestRandomUtils;
+import com.stresstest.random.ObjectGenerator;
 
 public class TestProfileRepository extends AbstractDataTierTest {
 
@@ -24,7 +23,7 @@ public class TestProfileRepository extends AbstractDataTierTest {
         // Step 1. Adding SocialPersonProfile
         SocialPersonProfile socialPersonProfile = DataGenerationUtils.generateSocialPersonProfile();
         // Step 2. Saving contact with the reference to this SocialPersonProfile
-        Profile profile = new SimpleProfileBuilder().setProfileId(TestRandomUtils.randomString(10)).addSocialProfiles(socialPersonProfile);
+        Profile profile = new SimpleProfileBuilder().setProfileId(ObjectGenerator.generate(String.class)).addSocialProfiles(socialPersonProfile);
         profileRepository.addProfile(profile);
         // Step 3. Getting social person profile
         Profile savedContact = profileRepository.getProfile(profile.getProfileId());
@@ -44,8 +43,8 @@ public class TestProfileRepository extends AbstractDataTierTest {
         // Step 1. Adding SocialPersonProfile
         SocialPersonProfile socialPersonProfile = DataGenerationUtils.generateSocialPersonProfile();
         // Step 2. Saving contact with the reference to this SocialPersonProfile
-        Profile profile = new SimpleProfileBuilder().setProfileId(TestRandomUtils.randomString(10)).addSocialProfiles(socialPersonProfile);
-        Profile anotherProfile = new SimpleProfileBuilder().setProfileId(TestRandomUtils.randomString(10)).addSocialProfiles(socialPersonProfile);
+        Profile profile = new SimpleProfileBuilder().setProfileId(ObjectGenerator.generate(String.class)).addSocialProfiles(socialPersonProfile);
+        Profile anotherProfile = new SimpleProfileBuilder().setProfileId(ObjectGenerator.generate(String.class)).addSocialProfiles(socialPersonProfile);
         profileRepository.addProfiles(Lists.newArrayList(profile, anotherProfile));
         // Step 3. Getting social person profile
         Profile savedContact = profileRepository.getProfile(profile.getProfileId());
@@ -59,7 +58,7 @@ public class TestProfileRepository extends AbstractDataTierTest {
         // Step 1. Adding SocialPersonProfile
         SocialPersonProfile socialPersonProfile = DataGenerationUtils.generateSocialPersonProfile();
         // Step 2. Saving contact with the reference to this SocialPersonProfile
-        Profile profile = new SimpleProfileBuilder().setProfileId(TestRandomUtils.randomString(10)).addSocialProfiles(socialPersonProfile);
+        Profile profile = new SimpleProfileBuilder().setProfileId(ObjectGenerator.generate(String.class)).addSocialProfiles(socialPersonProfile);
         profileRepository.addProfile(profile);
         // Step 3. Getting social person profile
         Profile savedContact = profileRepository.getProfile(profile.getProfileId());

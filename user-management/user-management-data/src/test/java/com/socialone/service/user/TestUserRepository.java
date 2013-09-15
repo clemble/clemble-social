@@ -18,8 +18,7 @@ import com.socialone.data.user.User.SimpleUserBuilder;
 import com.socialone.data.user.contact.Profile;
 import com.socialone.data.user.contact.Profile.SimpleProfileBuilder;
 import com.socialone.data.user.entity.UserEntity;
-import com.socialone.service.user.UserRepository;
-import com.socialone.test.utils.TestRandomUtils;
+import com.stresstest.random.ObjectGenerator;
 
 public class TestUserRepository extends AbstractDataTierTest {
 
@@ -32,7 +31,7 @@ public class TestUserRepository extends AbstractDataTierTest {
     @Test
     public void testAddEmptyUser() {
         // Step 1. Generating empty user with only fuse identifier
-        User user = new SimpleUserBuilder().setId(TestRandomUtils.randomString(10));
+        User user = new SimpleUserBuilder().setId(ObjectGenerator.generate(String.class));
         userRepository.addUserProfile(user);
         // Step 2. Check extracted data
         User savedUser = userRepository.getUserProfile(user.getId());

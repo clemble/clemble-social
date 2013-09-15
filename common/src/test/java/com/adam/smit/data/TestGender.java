@@ -5,7 +5,6 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.socialone.data.Gender;
-import com.socialone.test.utils.TestRandomUtils;
 
 public class TestGender {
 
@@ -15,15 +14,19 @@ public class TestGender {
     @Test
     public void testMaleParsing() {
         for (String identifier : male) {
-            Gender expected = Gender.parse(TestRandomUtils.randomCase(identifier));
+            Gender expected = Gender.parse(identifier.toLowerCase());
+            Assert.assertEquals(expected, Gender.M);
+            expected = Gender.parse(identifier.toUpperCase());
             Assert.assertEquals(expected, Gender.M);
         }
     }
 
     @Test
-    public void testFeMaleParsing() {
+    public void testFemaleParsing() {
         for (String identifier : female) {
-            Gender expected = Gender.parse(TestRandomUtils.randomCase(identifier));
+            Gender expected = Gender.parse(identifier.toUpperCase());
+            Assert.assertEquals(expected, Gender.W);
+            expected = Gender.parse(identifier.toLowerCase());
             Assert.assertEquals(expected, Gender.W);
         }
     }

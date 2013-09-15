@@ -30,17 +30,12 @@ public class JPAConfigurations {
 
     @Inject
     private JpaVendorAdapter jpaVendorAdapter;
-    
-    @Inject
-    public JpaDialect jpaDialect() {
-        return new HibernateJpaDialect();
-    }
 
     @Bean(name = "transactionManager")
     @Singleton
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
+    public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager(entityManagerFactory());
-        transactionManager.setJpaDialect(jpaDialect());
+        transactionManager.setJpaDialect(new HibernateJpaDialect());
         transactionManager.setDataSource(dataSource);
         transactionManager.setPersistenceUnitName("entityManager");
         return transactionManager;

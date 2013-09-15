@@ -1,4 +1,4 @@
-
+package com.socialone.service.match.word;
 
 import java.util.List;
 
@@ -8,15 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.collect.Lists;
 import com.socialone.service.match.MatchScore;
-import com.socialone.service.match.word.WordMatchService;
-import com.socialone.utils.soundmatch.AbstractBusinessTierTest;
 
 public class WordMatchServiceTest extends AbstractBusinessTierTest {
 
-    private String[] FULL_MATCH = { "Andrei", "Andrey", "Anna", "Anna", "Anton", "Anton", "Petrov", "Petrova", "Inokentii",
-            "Inokenty", "Евгений", "Evgenii" };
+    private String[] FULL_MATCH = { "Andrei", "Andrey", "Anna", "Anna", "Anton", "Anton", "Petrov", "Petrova", "Inokentii", "Inokenty", "Евгений", "Evgenii" };
     private String[] SOLID_MATCH = { "Шевчик", "Shevch", "Aleksandra", "Aleks" };
-    private String[] WEAK_MATCH = { "Aleksandra", "A", "Eugene", "E", "Inokentii", "I", "Shevchik", "Sh"};
+    private String[] WEAK_MATCH = { "Aleksandra", "A", "Eugene", "E", "Inokentii", "I", "Shevchik", "Sh" };
 
     @Autowired
     private WordMatchService soundMatchService;

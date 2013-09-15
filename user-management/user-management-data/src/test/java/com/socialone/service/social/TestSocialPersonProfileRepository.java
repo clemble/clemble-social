@@ -14,9 +14,8 @@ import com.socialone.data.social.SocialPersonProfile;
 import com.socialone.data.social.SocialPersonProfile.SimpleSocialPersonProfileBuilder;
 import com.socialone.data.social.SocialPersonProfile.SocialPersonProfileBuilder;
 import com.socialone.data.social.entity.SocialPersonProfileEntity;
-import com.socialone.service.social.SocialPersonProfileRepository;
 import com.socialone.service.user.DataGenerationUtils;
-import com.socialone.test.utils.TestRandomUtils;
+import com.stresstest.random.ObjectGenerator;
 
 public class TestSocialPersonProfileRepository extends AbstractDataTierTest {
 
@@ -33,7 +32,7 @@ public class TestSocialPersonProfileRepository extends AbstractDataTierTest {
         Assert.assertEquals(savedProfile, socialPersonProfile);
         // Step 3. Testing update
         SocialPersonProfileBuilder modifiedSocialPersonProfile = new SimpleSocialPersonProfileBuilder(socialPersonProfile)
-            .setFirstName(TestRandomUtils.randomString(10));
+            .setFirstName(ObjectGenerator.generate(String.class));
         modifiedSocialPersonProfile.getSocialConnection().addConnectionKey(new ConnectionKey("newService", "newUser"));
         socialPersonProfile = modifiedSocialPersonProfile.freeze();
 
@@ -52,7 +51,7 @@ public class TestSocialPersonProfileRepository extends AbstractDataTierTest {
         // Step 1. Testing adding 2 social person profiles
         socialPersonProfileRepository.addSocialPersonProfile(socialPersonProfile);
         SocialPersonProfileEntity anotherSocialPersonProfile = new SocialPersonProfileEntity(DataGenerationUtils.generateSocialPersonProfile());
-        anotherSocialPersonProfile.setPrimaryConnection(new ConnectionKey(socialPersonProfile.getPrimaryConnection().getProviderId(), TestRandomUtils.randomString(10)));
+        anotherSocialPersonProfile.setPrimaryConnection(new ConnectionKey(socialPersonProfile.getPrimaryConnection().getProviderId(), ObjectGenerator.generate(String.class)));
         socialPersonProfileRepository.addSocialPersonProfile(anotherSocialPersonProfile);
         // Step 2. Testing get
         Collection<? extends SocialPersonProfile> socialPersonProfiles = socialPersonProfileRepository.getSocialPersonProfiles(socialPersonProfile.getPrimaryConnection().getProviderId(), Lists.newArrayList(socialPersonProfile.getPrimaryConnection().getProviderUserId(), anotherSocialPersonProfile.getPrimaryConnection().getProviderUserId()));
@@ -65,7 +64,7 @@ public class TestSocialPersonProfileRepository extends AbstractDataTierTest {
     public void testAddBatch() {
         SocialPersonProfile socialPersonProfile = DataGenerationUtils.generateSocialPersonProfile();
         SocialPersonProfileEntity anotherSocialPersonProfile = new SocialPersonProfileEntity(DataGenerationUtils.generateSocialPersonProfile());
-        anotherSocialPersonProfile.setPrimaryConnection(new ConnectionKey(socialPersonProfile.getPrimaryConnection().getProviderId(), TestRandomUtils.randomString(10)));
+        anotherSocialPersonProfile.setPrimaryConnection(new ConnectionKey(socialPersonProfile.getPrimaryConnection().getProviderId(), ObjectGenerator.generate(String.class)));
         // Step 1. Testing adding 2 social person profiles
         socialPersonProfileRepository.addSocialPersonProfiles(Lists.newArrayList(socialPersonProfile, anotherSocialPersonProfile));
         // Step 2. Testing get

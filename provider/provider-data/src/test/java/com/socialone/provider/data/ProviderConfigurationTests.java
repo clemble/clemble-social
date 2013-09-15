@@ -10,9 +10,6 @@ import java.util.List;
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.junit.runners.RunInParallel;
-import org.junit.runners.RunTimes;
-import org.junit.runners.SingleRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,8 +25,10 @@ import com.socialone.provider.data.merge.MergeConfiguration.MergeConfigurationBu
 import com.socialone.provider.data.merge.ProviderPriority;
 import com.socialone.provider.data.merge.ProviderPriority.ImmutableProviderPriority;
 import com.socialone.provider.service.ProviderConfigurationRepository;
-import com.socialone.test.utils.ObjectGenerator;
-import com.socialone.test.utils.TestRandomUtils;
+import com.stresstest.random.ObjectGenerator;
+import com.stresstest.runners.RunInParallel;
+import com.stresstest.runners.RunTimes;
+import com.stresstest.runners.SingleRun;
 
 @RunTimes(500)
 @RunInParallel()
@@ -68,8 +67,8 @@ public class ProviderConfigurationTests extends AbstractProviderDataTierTest {
     @Test
     public void testSimpleUpdateProviderConfigurations() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
         // Step 1. Generating prior test data
-        String providerName = TestRandomUtils.randomString(10);
-        ProviderPriority newPriority = new ImmutableProviderPriority(TestRandomUtils.randomString(10), TestRandomUtils.nextInt(Integer.MAX_VALUE));
+        String providerName = ObjectGenerator.generate(String.class);
+        ProviderPriority newPriority = new ImmutableProviderPriority(ObjectGenerator.generate(String.class), ObjectGenerator.generate(Integer.class));
         // Step 2. Generating initial provider configurations
         ProviderConfiguration originalConfiguration = generateProviderConfigurations(providerName);
         // Step 3. Saving generated configurations
@@ -88,7 +87,7 @@ public class ProviderConfigurationTests extends AbstractProviderDataTierTest {
     @Test
     public void testUpdateProviderConfigurations() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
         // Step 1. Generating prior test data
-        String providerName = TestRandomUtils.randomString(10);
+        String providerName = ObjectGenerator.generate(String.class);
         // Step 2. Generating initial provider configurations
         ProviderConfiguration originalConfiguration = generateProviderConfigurations(providerName);
         // Step 3. Saving generated configurations
@@ -106,14 +105,14 @@ public class ProviderConfigurationTests extends AbstractProviderDataTierTest {
     @Test(expected = IllegalArgumentException.class)
     public void testUpdateNonExistentProviderConfigurations() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
         // Step 1. Adding configuration
-        ProviderConfiguration modifiedConfiguration = generateProviderConfigurations(TestRandomUtils.randomString(10));
+        ProviderConfiguration modifiedConfiguration = generateProviderConfigurations(ObjectGenerator.generate(String.class));
         // Step 2. Saving generated configurations
         configurationsRepository.updateProviderConfiguration(modifiedConfiguration);
     }
     
     @Test
     public void testGetNonExistentProviderConfigurations() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-        Assert.assertNull(configurationsRepository.getProviderConfiguration(TestRandomUtils.randomString(10)));
+        Assert.assertNull(configurationsRepository.getProviderConfiguration(ObjectGenerator.generate(String.class)));
     }
     
     @Test
