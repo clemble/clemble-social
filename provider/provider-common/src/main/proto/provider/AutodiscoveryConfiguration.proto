@@ -1,4 +1,4 @@
-package com.socialone.provider.data.autodiscovery;
+package com.clemble.social.provider.data.autodiscovery;
 
 message AutodiscoveryConfiguration {
 	required bool multidiscoveryEnabled = 1;

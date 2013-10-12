@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.socialone.user</groupId>
+        <groupId>com.clemble.social.user</groupId>
         <artifactId>user-management</artifactId>
         <version>0.0.18-SNAPSHOT</version>
     </parent>
     <artifactId>user-management-common</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.socialone</groupId>
+            <groupId>com.clemble.social</groupId>
             <artifactId>common-generic</artifactId>
         </dependency>
         <dependency>
@@ -16,7 +16,7 @@
             <artifactId>spring-social-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.socialone.provider</groupId>
+            <groupId>com.clemble.social.provider</groupId>
             <artifactId>provider-common</artifactId>
         </dependency>
     </dependencies>

@@ -2,14 +2,14 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.socialone.provider</groupId>
+        <groupId>com.clemble.social.provider</groupId>
         <artifactId>provider</artifactId>
         <version>0.0.18-SNAPSHOT</version>
     </parent>
     <artifactId>provider-data</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.socialone.provider</groupId>
+            <groupId>com.clemble.social.provider</groupId>
             <artifactId>provider-common</artifactId>
         </dependency>
 

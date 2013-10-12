@@ -2,19 +2,19 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.socialone.user</groupId>
+        <groupId>com.clemble.social.user</groupId>
         <artifactId>user-management</artifactId>
         <version>0.0.18-SNAPSHOT</version>
     </parent>
     <artifactId>user-management-business</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.socialone.user</groupId>
+            <groupId>com.clemble.social.user</groupId>
             <artifactId>user-management-data</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.socialone.utils</groupId>
+            <groupId>com.clemble.social.utils</groupId>
             <artifactId>util-service-business</artifactId>
         </dependency>
 

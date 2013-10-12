@@ -1,4 +1,4 @@
-package com.socialone.provider.data.callback.delivery;
+package com.clemble.social.provider.data.callback.delivery;
 
 message DeliveryConfiguration {
 	required DeliveryChannel deliveryChannel = 1;

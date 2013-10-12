@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>parent</artifactId>
-        <groupId>com.socialone</groupId>
+        <groupId>com.clemble.social</groupId>
         <version>0.0.18-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
@@ -24,12 +24,12 @@
         </dependency>
 
         <dependency>
-            <groupId>com.socialone</groupId>
+            <groupId>com.clemble.social</groupId>
             <artifactId>common</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.socialone</groupId>
+            <groupId>com.clemble.social</groupId>
             <artifactId>business</artifactId>
         </dependency>
 

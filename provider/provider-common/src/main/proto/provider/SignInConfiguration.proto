@@ -1,4 +1,4 @@
-package com.socialone.provider.data.signin;
+package com.clemble.social.provider.data.signin;
 
 message SignInConfiguration {
 

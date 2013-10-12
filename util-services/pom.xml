@@ -2,11 +2,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.socialone</groupId>
+        <groupId>com.clemble.social</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.18-SNAPSHOT</version>
     </parent>
-    <groupId>com.socialone.utils</groupId>
+    <groupId>com.clemble.social.utils</groupId>
     <artifactId>util-services</artifactId>
     <packaging>pom</packaging>
     <modules>
@@ -20,27 +20,27 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.socialone.utils</groupId>
+                <groupId>com.clemble.social.utils</groupId>
                 <artifactId>util-service-translation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.socialone.utils</groupId>
+                <groupId>com.clemble.social.utils</groupId>
                 <artifactId>util-service-translit</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.socialone.utils</groupId>
+                <groupId>com.clemble.social.utils</groupId>
                 <artifactId>util-service-soundmatch</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.socialone.utils</groupId>
+                <groupId>com.clemble.social.utils</groupId>
                 <artifactId>util-service-synonyms</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.socialone.utils</groupId>
+                <groupId>com.clemble.social.utils</groupId>
                 <artifactId>util-service-delivery</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -48,7 +48,7 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>com.socialone</groupId>
+            <groupId>com.clemble.social</groupId>
             <artifactId>test</artifactId>
             <scope>test</scope>
         </dependency>

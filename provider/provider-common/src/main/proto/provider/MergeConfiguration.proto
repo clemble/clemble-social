@@ -1,4 +1,4 @@
-package com.socialone.provider.data.merge;
+package com.clemble.social.provider.data.merge;
 
 message MergeConfiguration {
 	repeated ProviderPriority providerPriority = 1;

@@ -2,22 +2,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>parent</artifactId>
-        <groupId>com.socialone</groupId>
+        <groupId>com.clemble.social</groupId>
         <version>0.0.18-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
     <artifactId>common</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.socialone</groupId>
+            <groupId>com.clemble.social</groupId>
             <artifactId>common-generic</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.socialone.provider</groupId>
+            <groupId>com.clemble.social.provider</groupId>
             <artifactId>provider-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.socialone.user</groupId>
+            <groupId>com.clemble.social.user</groupId>
             <artifactId>user-management-common</artifactId>
         </dependency>
 
