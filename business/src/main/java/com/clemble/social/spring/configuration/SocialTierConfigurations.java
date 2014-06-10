@@ -13,7 +13,7 @@ import org.springframework.social.connect.ConnectionFactory;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
-import org.springframework.social.google.connect.GoogleConnectionFactory;
+//import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.linkedin.connect.LinkedInConnectionFactory;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
@@ -42,8 +42,8 @@ public class SocialTierConfigurations {
                 .getProperty("linkedin.consumer.secret"))));
 //        registry.addConnectionFactory(validate(new VKontakteConnectionFactory(environment.getProperty("vkontakte.cunsumer.key"), environment
 //                .getProperty("vkontakte.consumer.secret"))));
-        registry.addConnectionFactory(validate(new GoogleConnectionFactory(environment.getProperty("google.cunsumer.key"), environment
-                .getProperty("google.consumer.secret"))));
+//        registry.addConnectionFactory(validate(new GoogleConnectionFactory(environment.getProperty("google.cunsumer.key"), environment
+//                .getProperty("google.consumer.secret"))));
         return registry;
     }
 

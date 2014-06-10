@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionRepository;
 import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.google.api.Google;
 import org.springframework.social.linkedin.api.LinkedIn;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.vkontakte.api.VKontakte;
@@ -66,9 +65,6 @@ public class SocialNetworkController {
                         } else if (api instanceof VKontakte) {
                             VKontakte kontakte = (VKontakte) api;
                             model.addAttribute("vkontakte", kontakte.friendsOperations().get());
-                        } else if (api instanceof Google) {
-                            Google google = (Google) api;
-                            model.addAttribute("google", google.personOperations().contactQuery().getPage().getItems());
                         }
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();

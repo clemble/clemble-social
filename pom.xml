@@ -26,8 +26,7 @@
         <spring.social.linkedin.version>1.0.0.RC1</spring.social.linkedin.version>
         <spring.social.facebook.version>1.0.1.RELEASE</spring.social.facebook.version>
         <spring.social.twitter.version>1.0.2.RELEASE</spring.social.twitter.version>
-        <spring.social.vkontakte.version>1.1.0.BUILD-SNAPSHOT</spring.social.vkontakte.version>
-        <spring.social.google.version>0.0.1-SNAPSHOT</spring.social.google.version>
+        <spring.social.vkontakte.version>1.1.1.RELEASE</spring.social.vkontakte.version>
         <!-- Dependencies for ORM -->
         <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
         <hibernate.version>4.1.5.Final</hibernate.version>
@@ -68,11 +67,6 @@
             <id>org.springframework.maven.milestone</id>
             <name>Spring Framework Maven Milestone Repository</name>
             <url>http://maven.springframework.org/milestone</url>
-        </repository>
-        <repository>
-            <id>spring.social.google</id>
-            <name>Spring Social Google</name>
-            <url>https://github.com/GabiAxel/maven/raw/master/</url>
         </repository>
         <repository>
             <id>google-api-services</id>
@@ -302,14 +296,9 @@
                 <version>${spring.social.twitter.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.social</groupId>
+                <groupId>com.github.weekens</groupId>
                 <artifactId>spring-social-vkontakte</artifactId>
                 <version>${spring.social.vkontakte.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.social</groupId>
-                <artifactId>spring-social-google</artifactId>
-                <version>${spring.social.google.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jayway.facebooktestjavaapi</groupId>
