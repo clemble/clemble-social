@@ -1,0 +1,8 @@
+machine:
+  java:
+    version: oraclejdk8
+
+dependencies:
+  override:
+    - rm -rf ~/.m2/repository/com/clemble
+    - mvn install
